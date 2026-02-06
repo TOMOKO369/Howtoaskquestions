@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>質問・依頼の技術 | Clear Communication Guide</title>
     <meta name="description" content="「わからないこと」を上手に聞くコツや、仕事を円滑に進めるための具体的な依頼方法をまとめたガイドサイト。">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="background-animation"></div>
 
@@ -163,13 +167,15 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <button class="accordion-header">具体的で丁寧な例文を見る <i class="fas fa-chevron-down"></i></button>
+                                <button class="accordion-header">具体的で丁寧な例文を見る <i
+                                        class="fas fa-chevron-down"></i></button>
                                 <div class="accordion-body">
                                     <p><strong>Chatwork ブログ</strong><br>角が立たない丁寧な言い回しと、必要十分な情報構成のバランスが見事な例文集。</p>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <button class="accordion-header">クリエイティブな発注のコツ <i class="fas fa-chevron-down"></i></button>
+                                <button class="accordion-header">クリエイティブな発注のコツ <i
+                                        class="fas fa-chevron-down"></i></button>
                                 <div class="accordion-body">
                                     <p><strong>Schoo（スクー）</strong><br>「イメージと違う！」を防ぐための、使用目的やペルソナの言語化テクニック。</p>
                                 </div>
@@ -225,33 +231,150 @@
         </section>
 
         <!-- Section 3: Draft Checker (Interactive) -->
-        <section id="draft-check" class="section section-draft">
+        <!-- Section 3: Request Generator (Interactive) -->
+        <section id="generator" class="section section-generator">
             <div class="container">
-                <div class="draft-container">
-                    <div class="draft-header">
-                        <h2>ドラフト作成・チェック</h2>
-                        <p>依頼文や質問文を下書きしてみましょう。<br>右側のチェックリストを見ながら内容をブラッシュアップできます。</p>
-                    </div>
-                    <div class="draft-workspace">
-                        <div class="editor-pane">
-                            <textarea id="draftInput" placeholder="ここに下書きを入力してください...&#10;例：&#10;お疲れ様です。〇〇の件でご相談があります..."></textarea>
-                            <div class="editor-actions">
-                                <button id="clearBtn" class="btn btn-outline">クリア</button>
-                                <button id="copyBtn" class="btn btn-primary">コピーする</button>
+                <div class="section-header">
+                    <h3 class="section-badge">Request Generator</h3>
+                    <h2 class="section-title">依頼文自動生成ツール</h2>
+                    <p class="section-description">必要な項目を入力するだけで、プロフェッショナルな依頼文やAntigravityへの指示プロンプトを自動生成します。</p>
+                </div>
+
+                <div class="generator-container glass-card">
+                    <form id="requestForm" class="generator-form">
+                        <div class="form-grid">
+                            <!-- Step 1: Basic Info -->
+                            <div class="form-group span-full">
+                                <h3><i class="fas fa-info-circle"></i> 基本情報</h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="jobTitle">仕事の名称 <span class="required">*</span></label>
+                                <input type="text" id="jobTitle" placeholder="例：Webサイト制作、ロゴデザイン">
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">希望納期</label>
+                                <input type="text" id="deadline" placeholder="例：2026年3月10日まで">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">予算（金額）</label>
+                                <input type="text" id="budget" placeholder="例：5万円〜10万円">
+                            </div>
+
+                            <!-- Step 2: Specifics -->
+                            <div class="form-group span-full">
+                                <label for="deliverables">具体的指示（成果物・数量） <span class="required">*</span></label>
+                                <textarea id="deliverables" rows="3"
+                                    placeholder="例：トップページと問い合わせのHTML/CSS。レスポンシブ対応込み。"></textarea>
+                            </div>
+
+                            <!-- Step 3: Target & Usage -->
+                            <div class="form-group span-full">
+                                <h3><i class="fas fa-bullseye"></i> ターゲット・利用シーン</h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="targetPersona">ターゲット（ペルソナ）</label>
+                                <input type="text" id="targetPersona" placeholder="例：30代女性、時短に関心がある層">
+                            </div>
+                            <div class="form-group">
+                                <label for="usageScene">利用シーン</label>
+                                <input type="text" id="usageScene" placeholder="例：SNS広告用、社内会議資料">
+                            </div>
+
+                            <!-- Step 4: Tone -->
+                            <div class="form-group span-full">
+                                <label for="tone">雰囲気・トンマナ・参考</label>
+                                <textarea id="tone" rows="2"
+                                    placeholder="例：参考URL http://... 、青基調で信頼感重視。ポップな表現は避ける。"></textarea>
                             </div>
                         </div>
-                        <div class="checklist-pane">
-                            <h4>セルフチェック</h4>
-                            <div class="checkbox-group">
-                                <label><input type="checkbox"> 結論・目的が最初にある</label>
-                                <label><input type="checkbox"> 具体的な背景（Why）がある</label>
-                                <label><input type="checkbox"> ターゲット/ペルソナが明確</label>
-                                <label><input type="checkbox"> 期限（いつまで）がある</label>
-                                <label><input type="checkbox"> 自分の仮説/条件が入っている</label>
+
+                        <div class="form-actions">
+                            <button type="button" id="generateBtn" class="btn btn-primary full-width">依頼文を生成する <i
+                                    class="fas fa-magic"></i></button>
+                        </div>
+                    </form>
+
+                    <!-- Output Area -->
+                    <div class="output-area">
+                        <div class="output-header">
+                            <h4>生成結果</h4>
+                            <button id="copyResultBtn" class="btn btn-sm btn-outline"><i class="fas fa-copy"></i>
+                                コピー</button>
+                        </div>
+                        <textarea id="resultOutput" readonly placeholder="ここに生成された文章が表示されます..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: AI Construction Guide -->
+        <section id="ai-guide" class="section section-guide">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-badge">AI Development</h3>
+                    <h2 class="section-title">Antigravity活用ガイド</h2>
+                    <p class="section-description">AIエージェント「Antigravity」を使って、このようなWebサイトやツールを一瞬で構築するステップをご紹介します。</p>
+                </div>
+
+                <div class="guide-grid">
+                    <div class="guide-steps">
+                        <h3><i class="fas fa-rocket"></i> 構築ステップ</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <h4>インストールとセットアップ</h4>
+                                    <p>公式サイトやガイドに従い、Antigravity IDEをインストールします。</p>
+                                </div>
                             </div>
-                            <div id="feedback-area" class="feedback-area">
-                                <i class="fas fa-lightbulb"></i> 悩んだら「具体的なシチュエーション」を書き足してみましょう！
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <h4>プロンプト（指示文）の入力</h4>
+                                    <p>チャット画面に「仕事依頼をスムーズにするWebサイトを作って...」のように具体的に指示を出します。</p>
+                                </div>
                             </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <h4>プレビューと修正</h4>
+                                    <p>コードが生成されたらブラウザで即座に確認。「もっとシンプルに」「ボタンを大きく」など会話で修正できます。</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <h4>公開（ホスティング）</h4>
+                                    <p>GitHubやVercel等と連携し、コマンド一つで世界中にサイトを公開できます。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-resources">
+                        <h3><i class="fas fa-book"></i> 学習リソース</h3>
+                        <div class="resource-list">
+                            <a href="#" class="resource-item">
+                                <div class="res-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="res-info">
+                                    <strong>【完全ガイド】Google Antigravityとは？</strong>
+                                    <span>日本語化の方法や基本的な使い方を解説</span>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="res-icon"><i class="fas fa-laptop-code"></i></div>
+                                <div class="res-info">
+                                    <strong>WEB初心者でも静的サイトを一瞬で作って公開する方法</strong>
+                                    <span>迷わず公開までたどり着ける手順を紹介</span>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="res-icon"><i class="fab fa-youtube"></i></div>
+                                <div class="res-info">
+                                    <strong>YouTube：Antigravityだけでコーポレートサイトを作る</strong>
+                                    <span>実際の制作画面でレベル感を確認できます</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -268,4 +391,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
