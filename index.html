@@ -14,282 +14,109 @@
 </head>
 
 <body>
-    <div class="background-animation"></div>
+    <div class="background-animation">
+        <!-- Abstract conversation blobs -->
+        <div class="blob blob-ask"></div>
+        <div class="blob blob-listen"></div>
+        <!-- Floating icons representing dialogue and noting -->
+        <div class="bg-icon icon-dialogue"><i class="far fa-comments"></i></div>
+        <div class="bg-icon icon-note"><i class="fas fa-pen-to-square"></i></div>
+    </div>
 
     <header class="header">
         <div class="container">
             <h1 class="logo">Ask<span class="highlight">Mastery</span></h1>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#questions">質問のコツ</a></li>
-                    <li><a href="#requests">依頼のコツ</a></li>
-                    <li><a href="#draft-check">ドラフト作成</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
-                <span class="badge">Communication Skills</span>
-                <h2 class="hero-title">「伝わる」質問と<br>「動かす」依頼の技術</h2>
-                <p class="hero-subtitle">仕事も人間関係も、すべては「聞き方」と「伝え方」から始まります。<br>あなたの意図を正確に伝え、最高の結果を引き出すためのガイドです。</p>
-                <div class="hero-actions">
-                    <a href="#questions" class="btn btn-primary">質問力を上げる <i class="fas fa-arrow-right"></i></a>
-                    <a href="#requests" class="btn btn-secondary">依頼力を磨く <i class="fas fa-arrow-down"></i></a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="glass-card float-animation">
-                    <div class="icon-box"><i class="fas fa-comments"></i></div>
-                    <p>結論から話す</p>
-                </div>
-                <div class="glass-card float-animation delay-1">
-                    <div class="icon-box"><i class="fas fa-clipboard-check"></i></div>
-                    <p>目的を明確に</p>
-                </div>
-                <div class="glass-card float-animation delay-2">
-                    <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-                    <p>納期の設定</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 1: Questions (質問) -->
-        <section id="questions" class="section section-questions">
+        <!-- Section: Smart Generator (Top Priority) -->
+        <section id="generator" class="section section-generator hero-integrated">
             <div class="container">
-                <div class="section-header">
-                    <h3 class="section-badge">How to Ask</h3>
-                    <h2 class="section-title">「わからない」を<br>武器にする質問力</h2>
-                    <p class="section-description">「何を聞けばいいかわからない」から卒業しましょう。状況に応じた最適な情報源とテクニックをご紹介します。</p>
-                </div>
-
-                <!-- Core Principles -->
-                <div class="principles-grid">
-                    <div class="principle-card">
-                        <div class="number">01</div>
-                        <h3>結論ファースト</h3>
-                        <p>「何を聞きたいか（何に困っているか）」を最初に伝えましょう。相手の脳の負担を減らせます。</p>
-                    </div>
-                    <div class="principle-card">
-                        <div class="number">02</div>
-                        <h3>現状の整理</h3>
-                        <p>「どこまで分かって、どこからが謎か」を線引きして話すと、答えの解像度が上がります。</p>
-                    </div>
-                    <div class="principle-card">
-                        <div class="number">03</div>
-                        <h3>自分調べ</h3>
-                        <p>「自分なりに調べたこと・仮説」を添えると、相手は答えやすくなり、評価も上がります。</p>
-                    </div>
-                </div>
-
-                <!-- Resources Tabs -->
-                <div class="resources-wrapper">
-                    <div class="tabs">
-                        <button class="tab-btn active" data-target="learn">基本・学び</button>
-                        <button class="tab-btn" data-target="work">仕事・相談</button>
-                        <button class="tab-btn" data-target="text">メール・チャット</button>
-                    </div>
-
-                    <div class="tab-content active" id="learn">
-                        <div class="resource-card">
-                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="card-body">
-                                <h4>Schoo（スクー）</h4>
-                                <p>質問力が高い人の特徴や、「目的を明確にする」といった具体的なコツが体系的に学べます。</p>
-                                <span class="tag">動画学習</span>
-                            </div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="card-icon"><i class="fas fa-book-open"></i></div>
-                            <div class="card-body">
-                                <h4>グロービス・キャリアノート</h4>
-                                <p>「相手が答えやすい聞き方」など、論理構成に基づいたビジネス質問スキルを解説。</p>
-                                <span class="tag">キャリア</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-content" id="work">
-                        <div class="resource-card">
-                            <div class="card-icon"><i class="fas fa-user-tie"></i></div>
-                            <div class="card-body">
-                                <h4>マイナビエージェント</h4>
-                                <p>自分の評価を下げずに、上手に相談や質問をするための実践的なポイントを解説。</p>
-                                <span class="tag">評価管理</span>
-                            </div>
-                        </div>
-                        <div class="resource-card">
-                            <div class="card-icon"><i class="fas fa-comments-dollar"></i></div>
-                            <div class="card-body">
-                                <h4>Chatwork ブログ</h4>
-                                <p>上司や目上の人に聞くときの丁寧な敬語や、失礼にならない言い換え表現が豊富。</p>
-                                <span class="tag">コミュニケーション</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-content" id="text">
-                        <div class="resource-card">
-                            <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
-                            <div class="card-body">
-                                <h4>サイボウズ メールワイズ</h4>
-                                <p>一目で内容を理解できる件名の付け方や、返信しやすい文章構成を文例付きで紹介。</p>
-                                <span class="tag">メール術</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Requests (依頼) -->
-        <section id="requests" class="section section-requests">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-badge">How to Request</h3>
-                    <h2 class="section-title">相手が動きたくなる<br>「スマートな依頼」</h2>
-                    <p class="section-description">依頼内容が具体的であればあるほど、トラブルは減り、相手のパフォーマンスは最大化されます。</p>
-                </div>
-
-                <div class="request-grid">
-                    <!-- Resources Column -->
-                    <div class="request-resources">
-                        <h3><i class="fas fa-map-signs"></i> お役立ちサイト</h3>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <button class="accordion-header">依頼の基本構成を学ぶ <i class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-body">
-                                    <p><strong>Lancers（ランサーズ）マガジン</strong><br>「誰が・何を・いつまでに・いくらで」の基本項目を網羅。初心者必見。</p>
-                                    <p><strong>Web担当者Forum</strong><br>「ペルソナ（ターゲット）」や「目的」の伝え方に特化。迷わせない指示出しを学べます。</p>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">具体的で丁寧な例文を見る <i
-                                        class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-body">
-                                    <p><strong>Chatwork ブログ</strong><br>角が立たない丁寧な言い回しと、必要十分な情報構成のバランスが見事な例文集。</p>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">クリエイティブな発注のコツ <i
-                                        class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-body">
-                                    <p><strong>Schoo（スクー）</strong><br>「イメージと違う！」を防ぐための、使用目的やペルソナの言語化テクニック。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Checklist Column -->
-                    <div class="request-checklist">
-                        <h3><i class="fas fa-check-double"></i> 依頼の必須5項目</h3>
-                        <div class="checklist-card">
-                            <ul>
-                                <li>
-                                    <span class="icon"><i class="fas fa-bullseye"></i></span>
-                                    <div class="text">
-                                        <strong>背景・目的</strong>
-                                        <span>なぜこの仕事が必要か？（例：新規顧客増のため）</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon"><i class="fas fa-users"></i></span>
-                                    <div class="text">
-                                        <strong>ターゲット（ペルソナ）</strong>
-                                        <span>誰に届けるか？（例：30代働く女性、悩みは〇〇）</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon"><i class="fas fa-tasks"></i></span>
-                                    <div class="text">
-                                        <strong>具体的な業務内容</strong>
-                                        <span>何を・何個・どんな形式で（例：A4チラシ1枚、PDF）</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon"><i class="fas fa-calendar-alt"></i></span>
-                                    <div class="text">
-                                        <strong>納期とスケジュール</strong>
-                                        <span>最終納期だけでなく、初稿（1回目）確認日も設定。</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon"><i class="fas fa-file-contract"></i></span>
-                                    <div class="text">
-                                        <strong>報酬と条件</strong>
-                                        <span>金額（税抜/込）、修正回数、著作権の扱いなど。</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Draft Checker (Interactive) -->
-        <!-- Section 3: Request Generator (Interactive) -->
-        <section id="generator" class="section section-generator">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-badge">Request Generator</h3>
-                    <h2 class="section-title">依頼文自動生成ツール</h2>
-                    <p class="section-description">必要な項目を入力するだけで、プロフェッショナルな依頼文やAntigravityへの指示プロンプトを自動生成します。</p>
+                <div class="generator-header">
+                    <h1 class="main-title">Smart Ask & Request</h1>
+                    <p class="main-subtitle">ボタンを選ぶだけで、的確な「依頼文」や「質問文」が一瞬で完成します。</p>
                 </div>
 
                 <div class="generator-container glass-card">
-                    <form id="requestForm" class="generator-form">
-                        <div class="form-grid">
-                            <!-- Step 1: Basic Info -->
-                            <div class="form-group span-full">
-                                <h3><i class="fas fa-info-circle"></i> 基本情報</h3>
-                            </div>
-                            <div class="form-group">
-                                <label for="jobTitle">仕事の名称 <span class="required">*</span></label>
-                                <input type="text" id="jobTitle" placeholder="例：Webサイト制作、ロゴデザイン">
-                            </div>
-                            <div class="form-group">
-                                <label for="deadline">希望納期</label>
-                                <input type="text" id="deadline" placeholder="例：2026年3月10日まで">
-                            </div>
-                            <div class="form-group">
-                                <label for="budget">予算（金額）</label>
-                                <input type="text" id="budget" placeholder="例：5万円〜10万円">
-                            </div>
+                    <!-- Mode Switcher -->
+                    <div class="mode-switcher">
+                        <button type="button" class="mode-btn active" data-mode="request"><i
+                                class="fas fa-briefcase"></i> 仕事を依頼する</button>
+                        <button type="button" class="mode-btn" data-mode="question"><i
+                                class="fas fa-question-circle"></i> わからないことを聞く</button>
+                    </div>
 
-                            <!-- Step 2: Specifics -->
-                            <div class="form-group span-full">
-                                <label for="deliverables">具体的指示（成果物・数量） <span class="required">*</span></label>
-                                <textarea id="deliverables" rows="3"
-                                    placeholder="例：トップページと問い合わせのHTML/CSS。レスポンシブ対応込み。"></textarea>
-                            </div>
+                    <form id="generatorForm" class="generator-form">
 
-                            <!-- Step 3: Target & Usage -->
-                            <div class="form-group span-full">
-                                <h3><i class="fas fa-bullseye"></i> ターゲット・利用シーン</h3>
+                        <!-- Request Mode Options -->
+                        <div id="requestOptions" class="mode-options">
+                            <div class="form-group">
+                                <label>依頼のジャンル</label>
+                                <div class="selection-group" id="req-category">
+                                    <button type="button" class="option-btn" value="Web制作">Web制作</button>
+                                    <button type="button" class="option-btn" value="デザイン">デザイン</button>
+                                    <button type="button" class="option-btn" value="ライティング">ライティング</button>
+                                    <button type="button" class="option-btn" value="その他">その他</button>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="targetPersona">ターゲット（ペルソナ）</label>
-                                <input type="text" id="targetPersona" placeholder="例：30代女性、時短に関心がある層">
+                                <label>希望納期</label>
+                                <div class="selection-group" id="req-deadline">
+                                    <button type="button" class="option-btn" value="なるべく早く">なる早</button>
+                                    <button type="button" class="option-btn" value="1週間以内">1週間以内</button>
+                                    <button type="button" class="option-btn" value="今月中に">今月中</button>
+                                    <button type="button" class="option-btn" value="相談して決めたい">相談したい</button>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="usageScene">利用シーン</label>
-                                <input type="text" id="usageScene" placeholder="例：SNS広告用、社内会議資料">
-                            </div>
-
-                            <!-- Step 4: Tone -->
-                            <div class="form-group span-full">
-                                <label for="tone">雰囲気・トンマナ・参考</label>
-                                <textarea id="tone" rows="2"
-                                    placeholder="例：参考URL http://... 、青基調で信頼感重視。ポップな表現は避ける。"></textarea>
+                                <label>予算感</label>
+                                <div class="selection-group" id="req-budget">
+                                    <button type="button" class="option-btn" value="～5万円">～5万</button>
+                                    <button type="button" class="option-btn" value="5～10万円">5～10万</button>
+                                    <button type="button" class="option-btn" value="10万円～">10万～</button>
+                                    <button type="button" class="option-btn" value="見積もり希望">見積希望</button>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Question Mode Options -->
+                        <div id="questionOptions" class="mode-options" style="display: none;">
+                            <div class="form-group">
+                                <label>今の状況</label>
+                                <div class="selection-group" id="qst-status">
+                                    <button type="button" class="option-btn" value="全くわからない">全くわからない</button>
+                                    <button type="button" class="option-btn" value="自分なりに調べた">少し調べた</button>
+                                    <button type="button" class="option-btn" value="エラーが出て進めない">エラーが出る</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>緊急度</label>
+                                <div class="selection-group" id="qst-urgency">
+                                    <button type="button" class="option-btn" value="低（時間がある時でOK）">低</button>
+                                    <button type="button" class="option-btn" value="中（今日中に知りたい）">中</button>
+                                    <button type="button" class="option-btn" value="高（至急！）">高</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>環境・OSなど</label>
+                                <div class="selection-group" id="qst-env">
+                                    <button type="button" class="option-btn" value="Windows">Windows</button>
+                                    <button type="button" class="option-btn" value="Mac">Mac</button>
+                                    <button type="button" class="option-btn" value="スマホ">スマホ</button>
+                                    <button type="button" class="option-btn" value="その他">その他</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Common Text Area -->
+                        <div class="form-group span-full">
+                            <label id="mainInputLabel">聞きたい内容・指示内容 <span class="required">*</span></label>
+                            <textarea id="mainContent" rows="5" placeholder="ここに具体的な内容を入力してください..."></textarea>
+                        </div>
+
                         <div class="form-actions">
-                            <button type="button" id="generateBtn" class="btn btn-primary full-width">依頼文を生成する <i
+                            <button type="button" id="generateBtn" class="btn btn-primary full-width">文章を生成する <i
                                     class="fas fa-magic"></i></button>
                         </div>
                     </form>
@@ -301,85 +128,17 @@
                             <button id="copyResultBtn" class="btn btn-sm btn-outline"><i class="fas fa-copy"></i>
                                 コピー</button>
                         </div>
-                        <textarea id="resultOutput" readonly placeholder="ここに生成された文章が表示されます..."></textarea>
+                        <textarea id="resultOutput" readonly
+                            placeholder="ボタンを選んでテキストを入力すると、ここに整理された文章が表示されます。"></textarea>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: AI Construction Guide -->
-        <section id="ai-guide" class="section section-guide">
-            <div class="container">
-                <div class="section-header">
-                    <h3 class="section-badge">AI Development</h3>
-                    <h2 class="section-title">Antigravity活用ガイド</h2>
-                    <p class="section-description">AIエージェント「Antigravity」を使って、このようなWebサイトやツールを一瞬で構築するステップをご紹介します。</p>
-                </div>
+        <!-- (Request Tips Removed) -->
 
-                <div class="guide-grid">
-                    <div class="guide-steps">
-                        <h3><i class="fas fa-rocket"></i> 構築ステップ</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-marker">1</div>
-                                <div class="timeline-content">
-                                    <h4>インストールとセットアップ</h4>
-                                    <p>公式サイトやガイドに従い、Antigravity IDEをインストールします。</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-marker">2</div>
-                                <div class="timeline-content">
-                                    <h4>プロンプト（指示文）の入力</h4>
-                                    <p>チャット画面に「仕事依頼をスムーズにするWebサイトを作って...」のように具体的に指示を出します。</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-marker">3</div>
-                                <div class="timeline-content">
-                                    <h4>プレビューと修正</h4>
-                                    <p>コードが生成されたらブラウザで即座に確認。「もっとシンプルに」「ボタンを大きく」など会話で修正できます。</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-marker">4</div>
-                                <div class="timeline-content">
-                                    <h4>公開（ホスティング）</h4>
-                                    <p>GitHubやVercel等と連携し、コマンド一つで世界中にサイトを公開できます。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="guide-resources">
-                        <h3><i class="fas fa-book"></i> 学習リソース</h3>
-                        <div class="resource-list">
-                            <a href="#" class="resource-item">
-                                <div class="res-icon"><i class="fas fa-file-alt"></i></div>
-                                <div class="res-info">
-                                    <strong>【完全ガイド】Google Antigravityとは？</strong>
-                                    <span>日本語化の方法や基本的な使い方を解説</span>
-                                </div>
-                            </a>
-                            <a href="#" class="resource-item">
-                                <div class="res-icon"><i class="fas fa-laptop-code"></i></div>
-                                <div class="res-info">
-                                    <strong>WEB初心者でも静的サイトを一瞬で作って公開する方法</strong>
-                                    <span>迷わず公開までたどり着ける手順を紹介</span>
-                                </div>
-                            </a>
-                            <a href="#" class="resource-item">
-                                <div class="res-icon"><i class="fab fa-youtube"></i></div>
-                                <div class="res-info">
-                                    <strong>YouTube：Antigravityだけでコーポレートサイトを作る</strong>
-                                    <span>実際の制作画面でレベル感を確認できます</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Section 3: Draft Checker (Interactive) -->
+        <!-- (Original Request Generator Removed) -->
     </main>
 
     <footer class="footer">

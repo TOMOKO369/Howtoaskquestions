@@ -29,21 +29,115 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
-    animation: pulseBg 10s ease-in-out infinite alternate;
+    overflow: hidden;
+    background-color: var(--bg-dark);
 }
 
-@keyframes pulseBg {
-    0% {
-        transform: scale(1);
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    width: 50vw;
+    height: 50vw;
+    mix-blend-mode: screen;
+}
+
+/* Representing the "Asker" (Blue) */
+.blob-ask {
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    top: -10%;
+    left: -10%;
+    animation: dialogPulsate 12s infinite ease-in-out;
+}
+
+/* Representing the "Listener/Notetaker" (Teal/Green) */
+.blob-listen {
+    background: radial-gradient(circle, #2dd4bf, transparent 70%);
+    bottom: -10%;
+    right: -10%;
+    animation: dialogListen 15s infinite ease-in-out reverse;
+}
+
+.bg-icon {
+    position: absolute;
+    font-size: 20rem;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Icon for Dialogue (Top Left) */
+.icon-dialogue {
+    top: 15%;
+    left: 10%;
+    animation: floatTalk 8s infinite ease-in-out;
+}
+
+/* Icon for Note Taking (Bottom Right) */
+.icon-note {
+    bottom: 15%;
+    right: 10%;
+    animation: floatNote 10s infinite ease-in-out;
+    transform: rotate(-15deg);
+}
+
+@keyframes dialogPulsate {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
     }
 
+    50% {
+        transform: translate(50px, 50px) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+@keyframes dialogListen {
+
+    0%,
     100% {
-        transform: scale(1.1);
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-50px, -50px) scale(1.15);
+        opacity: 0.5;
+    }
+}
+
+@keyframes floatTalk {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.03;
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+        opacity: 0.08;
+    }
+}
+
+@keyframes floatNote {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-15deg) scale(1);
+        opacity: 0.03;
+    }
+
+    50% {
+        transform: translateY(20px) rotate(-10deg) scale(1.1);
+        opacity: 0.07;
     }
 }
 
@@ -763,6 +857,188 @@ textarea[readonly] {
 
     .guide-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Hero Integrated Generator */
+.hero-integrated {
+    padding-top: 5rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.generator-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.main-title {
+    font-size: 3rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 1rem;
+}
+
+.main-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Mode Switcher */
+.mode-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+}
+
+.mode-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.mode-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Selection Groups */
+.mode-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.selection-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.option-btn {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.option-btn.selected {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Form Layout Adjustments */
+.form-group label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#mainInputLabel {
+    font-size: 1.1rem;
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .main-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-integrated {
+        padding-top: 2rem;
+        min-height: auto;
+    }
+
+    /* Stack mode switcher buttons */
+    .mode-switcher {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .mode-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+
+    /* Adjust selection grids for mobile */
+    .mode-options {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+        gap: 1rem;
+    }
+
+    .selection-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* 2 buttons per row */
+        gap: 0.5rem;
+    }
+
+    .option-btn {
+        min-width: auto;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Adjust Form Padding */
+    .generator-container {
+        padding: 1.5rem;
+    }
+
+    /* Background Icon adjustments */
+    .bg-icon {
+        font-size: 10rem;
+        opacity: 0.05;
+    }
+
+    .icon-dialogue {
+        top: 5%;
+        left: -5%;
+    }
+
+    .icon-note {
+        bottom: 5%;
+        right: -5%;
     }
 }
 
